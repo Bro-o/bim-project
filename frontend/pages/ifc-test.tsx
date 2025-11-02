@@ -6,6 +6,12 @@ import Link from 'next/link'
 export default function IFCTest() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadedFileName, setLoadedFileName] = useState<string | null>(null);
+  
+  // IFC 로더와 fragments를 ref로 관리하여 외부에서 접근 가능하게 함
+  const ifcLoaderRef = useRef<any>(null);
+  const fragmentsRef = useRef<any>(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -56,7 +62,7 @@ export default function IFCTest() {
 
       world.renderer = new OBC.SimpleRenderer(components, container);
       world.camera = new OBC.SimpleCamera(components);
-      await world.camera.controls.setLookAt(78, 20, -2.2, 26, -4, 25);
+      // await world.camera.controls.setLookAt(78, 20, -2.2, 26, -4, 25);
 
       components.init();
 
@@ -72,207 +78,41 @@ export default function IFCTest() {
 
       */
 
-      const initializeFragments = async () => {
-        // 워커 파일 로드(localhost에서는 접근이 안돼서 다운 받아서 사용)
-        const githubUrl =
-          "https://thatopen.github.io/engine_fragment/resources/worker.mjs";
-        const fetchedUrl = await fetch(githubUrl);
-        const workerBlob = await fetchedUrl.blob();
-        const workerFile = new File([workerBlob], "worker.mjs", {
-          type: "text/javascript",
-        });
-        const workerUrl = URL.createObjectURL(workerFile);
-        const fragments = components.get(OBC.FragmentsManager);
-        fragments.init(workerUrl);
+      const ifcLoader = components.get(OBC.IfcLoader);
+      ifcLoaderRef.current = ifcLoader; // ref에 저장
 
-        world.camera.controls.addEventListener("rest", () =>
-          fragments.core.update(true),
-        );
-
-        fragments.list.onItemSet.add(({ value: model }) => {
-          model.useCamera(world.camera.three);
-          world.scene.three.add(model.object);
-          fragments.core.update(true);
-        });
-
-        const fragPaths = ["https://thatopen.github.io/engine_components/resources/frags/school_arq.frag"];
-        await Promise.all(
-          fragPaths.map(async (path) => {
-            const modelId = path.split("/").pop()?.split(".").shift();
-            if (!modelId) return null;
-            const file = await fetch(path);
-            const buffer = await file.arrayBuffer();
-            return fragments.core.load(buffer, { modelId });
-          }),
-        );
-
-        /* MD
-          Finally, we will make the camera look at the model:
-        */
-
-        
-        await fragments.core.update(true);
-      };
-
-      // fragments 초기화 실행
-      await initializeFragments();
-
-      /* MD
-        ### 🧩 Adding some UI
-        ---
-
-        We will use the `@thatopen/ui` library to add some simple and cool UI elements to our app. First, we need to call the `init` method of the `BUI.Manager` class to initialize the library:
-
-      */
-
-      BUI.Manager.init();
-
-      /* MD
-        Now we will create a new panel with some inputs to change the background color of the scene and the intensity of the directional and ambient lights. For more information about the UI library, you can check the specific documentation for it!
-      */
-      
-      const panel = BUI.Component.create<BUI.PanelSection>(() => {
-        return BUI.html`
-          <bim-panel label="🎮 3D 뷰어 컨트롤" class="options-menu">
-            <bim-panel-section label="🎨 화면 설정">
-            
-              <bim-color-input 
-                label="배경색" color="#202932" 
-                @input="${({ target }: { target: BUI.ColorInput }) => {
-                  world.scene.config.backgroundColor = new THREE.Color(target.color);
-                }}">
-              </bim-color-input>
-              
-            </bim-panel-section>
-            
-            <bim-panel-section label="💡 조명 설정">
-              
-              <bim-number-input 
-                slider step="0.1" label="방향광 강도" value="1.5" min="0.1" max="10"
-                @change="${({ target }: { target: BUI.NumberInput }) => {
-                  if (world && world.scene && world.scene.config && world.scene.config.directionalLight) {
-                    world.scene.config.directionalLight.intensity = target.value;
-                  }
-                }}">
-              </bim-number-input>
-              
-              <bim-number-input 
-                slider step="0.1" label="환경광 강도" value="1" min="0.1" max="5"
-                @change="${({ target }: { target: BUI.NumberInput }) => {
-                  if (world && world.scene && world.scene.config && world.scene.config.ambientLight) {
-                    world.scene.config.ambientLight.intensity = target.value;
-                  }
-                }}">
-              </bim-number-input>
-              
-            </bim-panel-section>
-          </bim-panel>
-          `;
+      await ifcLoader.setup({
+        autoSetWasm: false,
+        wasm: {
+          path: "https://unpkg.com/web-ifc@0.0.71/",
+          absolute: true,
+        },
       });
 
-      // 패널을 3D 렌더링 컨테이너 안으로 이동
-      container.appendChild(panel);
-      
-      // 패널에 직접 스타일 적용 (BUI 컴포넌트는 Shadow DOM을 사용하므로 직접 적용 필요)
-      setTimeout(() => {
-        panel.style.position = "absolute";
-        panel.style.top = "10px";
-        panel.style.right = "10px";
-        panel.style.maxHeight = "calc(100% - 10px)";
-        panel.style.minWidth = "unset";
-        panel.style.zIndex = "10";
-        
-        // BUI 컴포넌트 내부의 .parent 요소에도 스타일 적용
-        const parentElement = panel.shadowRoot?.querySelector('.parent');
-        if (parentElement) {
-          parentElement.style.background = "white";
-          parentElement.style.borderRadius = "12px";
-          parentElement.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.15)";
-          parentElement.style.padding = "24px";
-          parentElement.style.minWidth = "200px";
-          parentElement.style.maxWidth = "420px";
-        }
-      }, 100);
+      // 워커 파일 로드(localhost에서는 접근이 안돼서 다운 받아서 사용)
+      const githubUrl =
+        "https://thatopen.github.io/engine_fragment/resources/worker.mjs";
+      const fetchedUrl = await fetch(githubUrl);
+      const workerBlob = await fetchedUrl.blob();
+      const workerFile = new File([workerBlob], "worker.mjs", {
+        type: "text/javascript",
+      });
+      const workerUrl = URL.createObjectURL(workerFile);
 
-      /* MD
-        And we will make some logic that adds a button to the screen when the user is visiting our app from their phone, allowing to show or hide the menu. Otherwise, the menu would make the app unusable.
-      */
+      const fragments = components.get(OBC.FragmentsManager);
+      fragmentsRef.current = fragments; // ref에 저장
+      fragments.init(workerUrl);
 
-      const button = BUI.Component.create<BUI.PanelSection>(() => {
-        return BUI.html`
-            <bim-button class="phone-menu-toggler" icon="solar:settings-bold"
-              @click="${() => {
-                if (panel.style.visibility === "hidden") {
-                  panel.style.visibility = "visible";
-                } else {
-                  panel.style.visibility = "hidden";
-                }
-              }}"
-              title="설정 메뉴">
-            </bim-button>
-          `;
+      world.camera.controls.addEventListener("rest", () =>
+        fragments.core.update(true),
+      );
+
+      fragments.list.onItemSet.add(({ value: model }: any) => {
+        model.useCamera(world.camera.three);
+        world.scene.three.add(model.object);
+        fragments.core.update(true);
       });
 
-      // 버튼을 3D 렌더링 컨테이너 안으로 이동
-      container.appendChild(button);
-      
-      // 버튼에 직접 스타일 적용
-      setTimeout(() => {
-        button.style.position = "absolute";
-        button.style.top = "5px";
-        button.style.right = "5px";
-        button.style.zIndex = "10000";
-        button.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-        button.style.color = "white";
-        button.style.border = "none";
-        button.style.borderRadius = "50%";
-        button.style.width = "36px";
-        button.style.height = "36px";
-        button.style.cursor = "pointer";
-        button.style.display = "none"; // 데스크톱에서는 숨김
-        button.style.alignItems = "center";
-        button.style.justifyContent = "center";
-        button.style.fontSize = "24px";
-        button.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
-        button.style.transition = "all 0.3s ease";
-        button.style.visibility = "hidden";
-        
-        // 모바일 반응형 스타일 적용
-        const checkMobile = () => {
-          if (window.innerWidth <= 480) {
-            // 모바일에서는 패널 숨기고 버튼 보이기
-            panel.style.visibility = "hidden";
-            panel.style.bottom = "5px";
-            panel.style.left = "5px";
-            panel.style.top = "auto";
-            panel.style.right = "auto";
-            button.style.visibility = "visible";
-            button.style.display = "flex";
-          } else {
-            // 데스크톱에서는 패널 보이고 버튼 숨기기
-            panel.style.visibility = "visible";
-            panel.style.bottom = "auto";
-            panel.style.left = "auto";
-            panel.style.top = "5px";
-            panel.style.right = "5px";
-            button.style.visibility = "hidden";
-            button.style.display = "none";
-          }
-        };
-        
-        // 초기 체크
-        checkMobile();
-        
-        // 윈도우 리사이즈 이벤트 리스너
-        window.addEventListener('resize', checkMobile);
-        
-        // cleanup 함수에 리스너 제거 추가
-        const originalCleanup = cleanup;
-        cleanup = () => {
-          if (originalCleanup) originalCleanup();
-          window.removeEventListener('resize', checkMobile);
-        };
-      }, 100);
 
       /* MD
         ### ⏱️ Measuring the performance (optional)
@@ -300,15 +140,16 @@ export default function IFCTest() {
       // Cleanup function 반환
       return () => {
         components.dispose();
-        window.removeEventListener('resize', handleResize);
-        if (panel.parentNode) container.removeChild(panel);
-        if (button.parentNode) container.removeChild(button);
+        // window.removeEventListener('resize', handleResize);
+        // if (panel.parentNode) container.removeChild(panel);
+        // if (button.parentNode) container.removeChild(button);
         if (stats.dom.parentNode) container.removeChild(stats.dom);
       };
     };
 
     // 3D 초기화 함수 호출
     let cleanup: (() => void) | undefined;
+    
     initialize3D().then((cleanupFn) => {
       cleanup = cleanupFn;
     });
@@ -320,6 +161,51 @@ export default function IFCTest() {
       }
     };
   }, [isMounted]);
+
+  // 파일 업로드 핸들러
+  const handleFileUpload = async (event: any) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    // IFC 파일 확장자 체크
+    if (!file.name.toLowerCase().endsWith('.ifc')) {
+      alert('IFC 파일만 업로드 가능합니다.');
+      return;
+    }
+
+    if (!ifcLoaderRef.current) {
+      alert('3D 뷰어가 아직 초기화되지 않았습니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      console.log('IFC 파일 로딩 시작:', file.name);
+
+      // 파일을 ArrayBuffer로 읽기
+      const data = await file.arrayBuffer();
+      const buffer = new Uint8Array(data);
+
+      // IFC 로더를 사용하여 파일 로드
+      await ifcLoaderRef.current.load(buffer, false, file.name, {
+        processData: {
+          progressCallback: (progress: number) => {
+            console.log('로딩 진행률:', Math.round(progress * 100) + '%');
+          },
+        },
+      });
+
+      setLoadedFileName(file.name);
+      console.log('IFC 파일 로딩 완료:', file.name);
+    } catch (error) {
+      console.error('IFC 파일 로딩 실패:', error);
+      alert('IFC 파일을 로드하는 중 오류가 발생했습니다.');
+    } finally {
+      setIsLoading(false);
+      // 파일 input 초기화 (같은 파일을 다시 선택할 수 있도록)
+      event.target.value = '';
+    }
+  };
 
   if (!isMounted) {
     return (
@@ -370,6 +256,43 @@ export default function IFCTest() {
             <p className="text-gray-600 leading-relaxed">
               ThatOpen Components를 사용한 IFC 3D 뷰어 테스트 페이지입니다. 
               오른쪽 상단의 컨트롤 패널을 통해 배경색과 조명 설정을 조정할 수 있습니다.
+            </p>
+          </div>
+
+          {/* 파일 업로드 섹션 */}
+          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">IFC 파일 업로드</h3>
+            <div className="flex items-center space-x-4">
+              <label className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 cursor-pointer transition-colors">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                파일 선택
+                <input
+                  type="file"
+                  accept=".ifc"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  disabled={isLoading}
+                />
+              </label>
+              {isLoading && (
+                <div className="flex items-center space-x-2">
+                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+                  <span className="text-gray-600">파일 로딩 중...</span>
+                </div>
+              )}
+              {loadedFileName && !isLoading && (
+                <div className="flex items-center space-x-2 text-green-600">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="font-medium">{loadedFileName}</span>
+                </div>
+              )}
+            </div>
+            <p className="text-sm text-gray-500 mt-3">
+              * .ifc 파일만 업로드 가능합니다.
             </p>
           </div>
 
