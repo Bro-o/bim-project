@@ -1,0 +1,209 @@
+{
+    "title": "random example to show technical capabilities and usage",
+    "date": "2025-09-22 01:34:10",
+    "filepath": null,
+    "filename": null,
+    "specifications": [
+      {
+        "name": "binder",
+        "description": "",
+        "instructions": "",
+        "status": false,
+        "is_ifc_version": true,
+        "total_applicable": 0,
+        "total_applicable_pass": 0,
+        "total_applicable_fail": 0,
+        "percent_applicable_pass": "N/A",
+        "total_checks": 0,
+        "total_checks_pass": 0,
+        "total_checks_fail": 0,
+        "percent_checks_pass": "N/A",
+        "required": true,
+        "applicability": [
+          "All {'pattern': 'IFCCOVERING'} data of type CLADDING"
+        ],
+        "requirements": [
+          {
+            "facet_type": "Property",
+            "metadata": {
+              "propertySet": {
+                "xs:restriction": [
+                  {
+                    "@base": "xs:string",
+                    "xs:pattern": [
+                      {
+                        "@value": "anas.*"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "baseName": {
+                "simpleValue": "Anax"
+              },
+              "value": {
+                "simpleValue": "yes"
+              },
+              "@dataType": "IFCLABEL",
+              "@cardinality": "required"
+            },
+            "label": "{'pattern': 'anas.*'}.Anax",
+            "value": "yes",
+            "description": "Anax data shall be yes and in the dataset {'pattern': 'anas.*'}",
+            "status": false,
+            "passed_entities": [],
+            "failed_entities": [],
+            "total_applicable": 0,
+            "total_pass": 0,
+            "total_fail": 0,
+            "percent_pass": "N/A"
+          },
+          {
+            "facet_type": "Material",
+            "metadata": {
+              "value": {
+                "xs:restriction": [
+                  {
+                    "@base": "xs:string",
+                    "xs:pattern": [
+                      {
+                        "@value": "[A-Z][A-Z]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "@cardinality": "required"
+            },
+            "label": "Name / Category",
+            "value": "{'pattern': '[A-Z][A-Z]'}",
+            "description": "Shall have a material of {'pattern': '[A-Z][A-Z]'}",
+            "status": false,
+            "passed_entities": [],
+            "failed_entities": [],
+            "total_applicable": 0,
+            "total_pass": 0,
+            "total_fail": 0,
+            "percent_pass": "N/A"
+          }
+        ]
+      },
+      {
+        "name": "ramen",
+        "description": "",
+        "instructions": "",
+        "status": true,
+        "is_ifc_version": true,
+        "total_applicable": 0,
+        "total_applicable_pass": 0,
+        "total_applicable_fail": 0,
+        "percent_applicable_pass": "N/A",
+        "total_checks": 0,
+        "total_checks_pass": 0,
+        "total_checks_fail": 0,
+        "percent_checks_pass": "N/A",
+        "required": false,
+        "applicability": [
+          "All IFCWINDOW data",
+          "Data having a NL-Sfb reference of {'pattern': '[0-9]\\\\.[0-9]'}"
+        ],
+        "requirements": [
+          {
+            "facet_type": "Property",
+            "metadata": {
+              "propertySet": {
+                "simpleValue": "attribute"
+              },
+              "baseName": {
+                "simpleValue": "OverallWidth"
+              },
+              "value": {
+                "xs:restriction": [
+                  {
+                    "@base": "xs:double",
+                    "xs:minInclusive": [
+                      {
+                        "@value": "0"
+                      }
+                    ],
+                    "xs:maxInclusive": [
+                      {
+                        "@value": "120"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "@dataType": "IFCLENGTHMEASURE",
+              "@cardinality": "required"
+            },
+            "label": "attribute.OverallWidth",
+            "value": "{'minInclusive': '0', 'maxInclusive': '120'}",
+            "description": "OverallWidth data shall be {'minInclusive': '0', 'maxInclusive': '120'} and in the dataset attribute",
+            "status": true,
+            "passed_entities": [],
+            "failed_entities": [],
+            "total_applicable": 0,
+            "total_pass": 0,
+            "total_fail": 0,
+            "percent_pass": "N/A"
+          },
+          {
+            "facet_type": "Property",
+            "metadata": {
+              "propertySet": {
+                "simpleValue": "AedesUVIP"
+              },
+              "baseName": {
+                "simpleValue": "FireRating"
+              },
+              "value": {
+                "xs:restriction": [
+                  {
+                    "@base": "xs:string",
+                    "xs:enumeration": [
+                      {
+                        "@value": "30"
+                      },
+                      {
+                        "@value": "60"
+                      },
+                      {
+                        "@value": "90"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "@dataType": "IFCTEXT",
+              "@uri": "http://identifier.buildingsmart.org/uri/dummy-example/FireRating",
+              "@cardinality": "required"
+            },
+            "label": "AedesUVIP.FireRating",
+            "value": "{'enumeration': ['30', '60', '90']}",
+            "description": "FireRating data shall be {'enumeration': ['30', '60', '90']} and in the dataset AedesUVIP",
+            "status": true,
+            "passed_entities": [],
+            "failed_entities": [],
+            "total_applicable": 0,
+            "total_pass": 0,
+            "total_fail": 0,
+            "percent_pass": "N/A"
+          }
+        ]
+      }
+    ],
+    "status": false,
+    "total_specifications": 2,
+    "total_specifications_pass": 1,
+    "total_specifications_fail": 1,
+    "percent_specifications_pass": 50,
+    "total_requirements": 4,
+    "total_requirements_pass": 2,
+    "total_requirements_fail": 2,
+    "percent_requirements_pass": 50,
+    "total_checks": 0,
+    "total_checks_pass": 0,
+    "total_checks_fail": 0,
+    "percent_checks_pass": "N/A"
+  }

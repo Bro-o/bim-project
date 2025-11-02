@@ -1,0 +1,1690 @@
+{
+    "title": "Wooden Windows",
+    "date": "2025-09-21 22:41:51",
+    "filepath": null,
+    "filename": null,
+    "specifications": [
+        {
+            "name": "subTypeExample",
+            "description": "",
+            "instructions": "",
+            "status": false,
+            "is_ifc_version": true,
+            "total_applicable": 6,
+            "total_applicable_pass": 0,
+            "total_applicable_fail": 6,
+            "percent_applicable_pass": 0,
+            "total_checks": 6,
+            "total_checks_pass": 0,
+            "total_checks_fail": 6,
+            "percent_checks_pass": 0,
+            "required": true,
+            "applicability": [
+                "All IFCMEMBER data"
+            ],
+            "requirements": [
+                {
+                    "facet_type": "PartOf",
+                    "metadata": {
+                        "@relation": "IFCRELAGGREGATES",
+                        "@cardinality": "required",
+                        "entity": {
+                            "name": {
+                                "simpleValue": "IFCELEMENTASSEMBLY"
+                            },
+                            "predefinedType": {
+                                "simpleValue": "GIRDER"
+                            }
+                        }
+                    },
+                    "label": "IFCRELAGGREGATES",
+                    "value": "IFCELEMENTASSEMBLY.GIRDER",
+                    "description": "An element must have an IFCRELAGGREGATES relationship with an IFCELEMENTASSEMBLY of predefined type GIRDER",
+                    "status": false,
+                    "passed_entities": [],
+                    "failed_entities": [
+                        {
+                            "reason": "The entity has a relationship with incorrect entities: \"['IFCELEMENTASSEMBLY.Doors Assembly:Merk A']\"",
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "reason": "The entity has a relationship with incorrect entities: \"['IFCELEMENTASSEMBLY.Doors Assembly:Merk A']\"",
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        },
+                        {
+                            "reason": "The entity has a relationship with incorrect entities: \"['IFCELEMENTASSEMBLY.Doors Assembly:Merk A']\"",
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "reason": "The entity has a relationship with incorrect entities: \"['IFCELEMENTASSEMBLY.Doors Assembly:Merk A']\"",
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "reason": "The entity has a relationship with incorrect entities: \"['IFCELEMENTASSEMBLY.Doors Assembly:Merk A']\"",
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        },
+                        {
+                            "reason": "The entity has a relationship with incorrect entities: \"['IFCELEMENTASSEMBLY.Doors Assembly:Merk A']\"",
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        }
+                    ],
+                    "total_applicable": 6,
+                    "total_pass": 0,
+                    "total_fail": 6,
+                    "percent_pass": 0
+                }
+            ]
+        },
+        {
+            "name": "Stijlen en Dorpels",
+            "description": "",
+            "instructions": "",
+            "status": false,
+            "is_ifc_version": true,
+            "total_applicable": 6,
+            "total_applicable_pass": 0,
+            "total_applicable_fail": 6,
+            "percent_applicable_pass": 0,
+            "total_checks": 36,
+            "total_checks_pass": 24,
+            "total_checks_fail": 12,
+            "percent_checks_pass": 66,
+            "required": true,
+            "applicability": [
+                "All IFCMEMBER data"
+            ],
+            "requirements": [
+                {
+                    "facet_type": "PartOf",
+                    "metadata": {
+                        "@relation": "IFCRELAGGREGATES",
+                        "@cardinality": "required",
+                        "entity": {
+                            "name": {
+                                "simpleValue": "IFCELEMENTASSEMBLY"
+                            }
+                        }
+                    },
+                    "label": "IFCRELAGGREGATES",
+                    "value": "IFCELEMENTASSEMBLY",
+                    "description": "An element must have an IFCRELAGGREGATES relationship with an IFCELEMENTASSEMBLY",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        },
+                        {
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        },
+                        {
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 6,
+                    "total_pass": 6,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbinnenzijde"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:pattern": [
+                                        {
+                                            "@value": "RAL.*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbinnenzijde",
+                    "value": "{'pattern': 'RAL.*'}",
+                    "description": "Kleurbinnenzijde data shall be {'pattern': 'RAL.*'} and in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        },
+                        {
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property set does not contain the required property",
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        }
+                    ],
+                    "total_applicable": 6,
+                    "total_pass": 5,
+                    "total_fail": 1,
+                    "percent_pass": 83
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbuitenzijde"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbuitenzijde",
+                    "value": "",
+                    "description": "Kleurbuitenzijde data shall be provided in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        },
+                        {
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property set does not contain the required property",
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        }
+                    ],
+                    "total_applicable": 6,
+                    "total_pass": 5,
+                    "total_fail": 1,
+                    "percent_pass": 83
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Onderdeel"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:enumeration": [
+                                        {
+                                            "@value": "Stijl"
+                                        },
+                                        {
+                                            "@value": "Dorpel"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Onderdeel",
+                    "value": "{'enumeration': ['Stijl', 'Dorpel']}",
+                    "description": "Onderdeel data shall be {'enumeration': ['Stijl', 'Dorpel']} and in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property value \"Tussenstijl\" does not match the requirements",
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "reason": "The property value \"Bovendorpel\" does not match the requirements",
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "reason": "The property value \"Onderdorpelsysteem\" does not match the requirements",
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        },
+                        {
+                            "reason": "The property value \"Tussendorpel\" does not match the requirements",
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        }
+                    ],
+                    "total_applicable": 6,
+                    "total_pass": 2,
+                    "total_fail": 4,
+                    "percent_pass": 33
+                },
+                {
+                    "facet_type": "Classification",
+                    "metadata": {
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:pattern": [
+                                        {
+                                            "@value": "3[1-2]\\.[0-9][0-9]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "system": {
+                            "simpleValue": "Custom"
+                        },
+                        "@cardinality": "required"
+                    },
+                    "label": "System / Reference",
+                    "value": "Custom / {'pattern': '3[1-2]\\\\.[0-9][0-9]'}",
+                    "description": "Shall have a Custom reference of {'pattern': '3[1-2]\\\\.[0-9][0-9]'}",
+                    "status": false,
+                    "passed_entities": [],
+                    "failed_entities": [
+                        {
+                            "reason": "The systems \"['Uniformat']\" do not match the requirements",
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "reason": "The systems \"['Uniformat']\" do not match the requirements",
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        },
+                        {
+                            "reason": "The systems \"['Uniformat']\" do not match the requirements",
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "reason": "The systems \"['Uniformat']\" do not match the requirements",
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "reason": "The systems \"['Uniformat']\" do not match the requirements",
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        },
+                        {
+                            "reason": "The systems \"['Uniformat']\" do not match the requirements",
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        }
+                    ],
+                    "total_applicable": 6,
+                    "total_pass": 0,
+                    "total_fail": 6,
+                    "percent_pass": 0
+                },
+                {
+                    "facet_type": "Material",
+                    "metadata": {
+                        "@cardinality": "required"
+                    },
+                    "label": "Name / Category",
+                    "value": "",
+                    "description": "Shall have a material",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#1560=IfcMember('2$UeUKpaD9F8_d0_zxndYX',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715',$,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',#1559,#1553,'377715')",
+                            "element_type": "#1546=IfcMemberType('2$UeUKpaD9F8_d0_zxndiG',#48,'31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel',$,$,(#1597,#1600,#1603,#1605,#1610),(#1544),'377026',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussendorpel:31_Kozijnhout_tussendorpel:377715",
+                            "description": null,
+                            "id": 1560,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYX",
+                            "tag": "377715"
+                        },
+                        {
+                            "element": "#1298=IfcMember('2$UeUKpaD9F8_d0_zxndYW',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714',$,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',#1297,#1291,'377714')",
+                            "element_type": "#1270=IfcMemberType('2$UeUKpaD9F8_d0_zxndjh',#48,'31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel',$,$,(#1333,#1336,#1339,#1341,#1344),(#1268),'377017',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_onderdorpel:31_Kozijnhout_onderdorpel:377714",
+                            "description": null,
+                            "id": 1298,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYW",
+                            "tag": "377714"
+                        },
+                        {
+                            "element": "#1102=IfcMember('2$UeUKpaD9F8_d0_zxndYZ',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713',$,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',#1101,#1095,'377713')",
+                            "element_type": "#1088=IfcMemberType('2$UeUKpaD9F8_d0_zxndjY',#48,'31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel',$,$,(#1139,#1142,#1145,#1147,#1152),(#1086),'377008',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_bovendorpel:31_Kozijnhout_bovendorpel:377713",
+                            "description": null,
+                            "id": 1102,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYZ",
+                            "tag": "377713"
+                        },
+                        {
+                            "element": "#926=IfcMember('2$UeUKpaD9F8_d0_zxndYY',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712',$,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',#925,#919,'377712')",
+                            "element_type": "#898=IfcMemberType('2$UeUKpaD9F8_d0_zxndjr',#48,'31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl',$,$,(#963,#966,#969,#971,#976),(#896),'376999',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_tussenstijl:31_Kozijnhout_tussenstijl:377712",
+                            "description": null,
+                            "id": 926,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYY",
+                            "tag": "377712"
+                        },
+                        {
+                            "element": "#386=IfcMember('2$UeUKpaD9F8_d0_zxndYy',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#384,#376,'377710')",
+                            "element_type": "#348=IfcMemberType('2$UeUKpaD9F8_d0_zxndj5',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#437,#440,#443,#445,#450),(#345),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377710",
+                            "description": null,
+                            "id": 386,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYy",
+                            "tag": "377710"
+                        },
+                        {
+                            "element": "#642=IfcMember('2$UeUKpaD9F8_d0_zxndYz',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711',$,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',#641,#635,'377711')",
+                            "element_type": "#628=IfcMemberType('3pA4GD$2jEdh1d28ap42hp',#48,'31_Kozijnhout_randstijl:31_Kozijnhout_randstijl',$,$,(#679,#682,#685,#687,#692),(#626),'376983',$,.BRACE.)",
+                            "class": "IfcMember",
+                            "predefined_type": "BRACE",
+                            "name": "31_Kozijnhout_randstijl:31_Kozijnhout_randstijl:377711",
+                            "description": null,
+                            "id": 642,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYz",
+                            "tag": "377711"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 6,
+                    "total_pass": 6,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                }
+            ]
+        },
+        {
+            "name": "Deur",
+            "description": "",
+            "instructions": "",
+            "status": true,
+            "is_ifc_version": true,
+            "total_applicable": 1,
+            "total_applicable_pass": 1,
+            "total_applicable_fail": 0,
+            "percent_applicable_pass": 100,
+            "total_checks": 6,
+            "total_checks_pass": 6,
+            "total_checks_fail": 0,
+            "percent_checks_pass": 100,
+            "required": false,
+            "applicability": [
+                "All IFCDOOR data"
+            ],
+            "requirements": [
+                {
+                    "facet_type": "PartOf",
+                    "metadata": {
+                        "@relation": "IFCRELAGGREGATES",
+                        "@cardinality": "required",
+                        "entity": {
+                            "name": {
+                                "simpleValue": "IFCELEMENTASSEMBLY"
+                            }
+                        }
+                    },
+                    "label": "IFCRELAGGREGATES",
+                    "value": "IFCELEMENTASSEMBLY",
+                    "description": "An element must have an IFCRELAGGREGATES relationship with an IFCELEMENTASSEMBLY",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#7893=IfcDoor('2$UeUKpaD9F8_d0_zxndYc',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716',$,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',#7892,#7886,'377716',2422.00000000001,1009.)",
+                            "element_type": "#7849=IfcDoorStyle('1qDrRnFPb0du6Kx0i9TbRi',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',$,$,(#7847,#7848,#7962,#7968,#7971,#7973,#7979),(#7845),'377048',.SINGLE_SWING_RIGHT.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcDoor",
+                            "predefined_type": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening",
+                            "name": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716",
+                            "description": null,
+                            "id": 7893,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYc",
+                            "tag": "377716"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Draairichting"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:enumeration": [
+                                        {
+                                            "@value": "DIN Links"
+                                        },
+                                        {
+                                            "@value": "DIN Rechts"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Draairichting",
+                    "value": "{'enumeration': ['DIN Links', 'DIN Rechts']}",
+                    "description": "Draairichting data shall be {'enumeration': ['DIN Links', 'DIN Rechts']} and in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#7893=IfcDoor('2$UeUKpaD9F8_d0_zxndYc',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716',$,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',#7892,#7886,'377716',2422.00000000001,1009.)",
+                            "element_type": "#7849=IfcDoorStyle('1qDrRnFPb0du6Kx0i9TbRi',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',$,$,(#7847,#7848,#7962,#7968,#7971,#7973,#7979),(#7845),'377048',.SINGLE_SWING_RIGHT.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcDoor",
+                            "predefined_type": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening",
+                            "name": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716",
+                            "description": null,
+                            "id": 7893,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYc",
+                            "tag": "377716"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbinnenzijde"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:pattern": [
+                                        {
+                                            "@value": "RAL.*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbinnenzijde",
+                    "value": "{'pattern': 'RAL.*'}",
+                    "description": "Kleurbinnenzijde data shall be {'pattern': 'RAL.*'} and in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#7893=IfcDoor('2$UeUKpaD9F8_d0_zxndYc',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716',$,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',#7892,#7886,'377716',2422.00000000001,1009.)",
+                            "element_type": "#7849=IfcDoorStyle('1qDrRnFPb0du6Kx0i9TbRi',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',$,$,(#7847,#7848,#7962,#7968,#7971,#7973,#7979),(#7845),'377048',.SINGLE_SWING_RIGHT.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcDoor",
+                            "predefined_type": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening",
+                            "name": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716",
+                            "description": null,
+                            "id": 7893,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYc",
+                            "tag": "377716"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbuitenzijde"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbuitenzijde",
+                    "value": "",
+                    "description": "Kleurbuitenzijde data shall be provided in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#7893=IfcDoor('2$UeUKpaD9F8_d0_zxndYc',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716',$,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',#7892,#7886,'377716',2422.00000000001,1009.)",
+                            "element_type": "#7849=IfcDoorStyle('1qDrRnFPb0du6Kx0i9TbRi',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',$,$,(#7847,#7848,#7962,#7968,#7971,#7973,#7979),(#7845),'377048',.SINGLE_SWING_RIGHT.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcDoor",
+                            "predefined_type": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening",
+                            "name": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716",
+                            "description": null,
+                            "id": 7893,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYc",
+                            "tag": "377716"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Onderdeel"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Onderdeel",
+                    "value": "",
+                    "description": "Onderdeel data shall be provided in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#7893=IfcDoor('2$UeUKpaD9F8_d0_zxndYc',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716',$,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',#7892,#7886,'377716',2422.00000000001,1009.)",
+                            "element_type": "#7849=IfcDoorStyle('1qDrRnFPb0du6Kx0i9TbRi',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',$,$,(#7847,#7848,#7962,#7968,#7971,#7973,#7979),(#7845),'377048',.SINGLE_SWING_RIGHT.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcDoor",
+                            "predefined_type": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening",
+                            "name": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716",
+                            "description": null,
+                            "id": 7893,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYc",
+                            "tag": "377716"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Material",
+                    "metadata": {
+                        "@cardinality": "required"
+                    },
+                    "label": "Name / Category",
+                    "value": "",
+                    "description": "Shall have a material",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#7893=IfcDoor('2$UeUKpaD9F8_d0_zxndYc',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716',$,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',#7892,#7886,'377716',2422.00000000001,1009.)",
+                            "element_type": "#7849=IfcDoorStyle('1qDrRnFPb0du6Kx0i9TbRi',#48,'31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening',$,$,(#7847,#7848,#7962,#7968,#7971,#7973,#7979),(#7845),'377048',.SINGLE_SWING_RIGHT.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcDoor",
+                            "predefined_type": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening",
+                            "name": "31.i_BI Houten deur met glasopening:31.i_BI Houten deur met glasopening:377716",
+                            "description": null,
+                            "id": 7893,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYc",
+                            "tag": "377716"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                }
+            ]
+        },
+        {
+            "name": "Raam",
+            "description": "",
+            "instructions": "",
+            "status": false,
+            "is_ifc_version": true,
+            "total_applicable": 2,
+            "total_applicable_pass": 1,
+            "total_applicable_fail": 1,
+            "percent_applicable_pass": 50,
+            "total_checks": 10,
+            "total_checks_pass": 6,
+            "total_checks_fail": 4,
+            "percent_checks_pass": 60,
+            "required": false,
+            "applicability": [
+                "All IFCWINDOW data"
+            ],
+            "requirements": [
+                {
+                    "facet_type": "PartOf",
+                    "metadata": {
+                        "@relation": "IFCRELAGGREGATES",
+                        "@cardinality": "required",
+                        "entity": {
+                            "name": {
+                                "simpleValue": "IFCELEMENTASSEMBLY"
+                            }
+                        }
+                    },
+                    "label": "IFCRELAGGREGATES",
+                    "value": "IFCELEMENTASSEMBLY",
+                    "description": "An element must have an IFCRELAGGREGATES relationship with an IFCELEMENTASSEMBLY",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10484=IfcWindow('2$UeUKpaD9F8_d0_zxndYd',#48,'31.i_BI Houten raam:31.i_BI Houten raam:377717',$,'31.i_BI Houten raam:31.i_BI Houten raam',#10483,#10477,'377717',1836.00000000001,1000.)",
+                            "element_type": "#10468=IfcWindowStyle('1IzFEdtVLEUgB3NEimTO_9',#48,'31.i_BI Houten raam:31.i_BI Houten raam',$,$,(#10467,#10538,#10541,#10543,#10548,#10554),(#10465),'607837',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI Houten raam:31.i_BI Houten raam",
+                            "name": "31.i_BI Houten raam:31.i_BI Houten raam:377717",
+                            "description": null,
+                            "id": 10484,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYd",
+                            "tag": "377717"
+                        },
+                        {
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 2,
+                    "total_pass": 2,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Draairichting"
+                        },
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Draairichting",
+                    "value": "",
+                    "description": "Draairichting data shall be provided in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#10484=IfcWindow('2$UeUKpaD9F8_d0_zxndYd',#48,'31.i_BI Houten raam:31.i_BI Houten raam:377717',$,'31.i_BI Houten raam:31.i_BI Houten raam',#10483,#10477,'377717',1836.00000000001,1000.)",
+                            "element_type": "#10468=IfcWindowStyle('1IzFEdtVLEUgB3NEimTO_9',#48,'31.i_BI Houten raam:31.i_BI Houten raam',$,$,(#10467,#10538,#10541,#10543,#10548,#10554),(#10465),'607837',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI Houten raam:31.i_BI Houten raam",
+                            "name": "31.i_BI Houten raam:31.i_BI Houten raam:377717",
+                            "description": null,
+                            "id": 10484,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYd",
+                            "tag": "377717"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property set does not contain the required property",
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "total_applicable": 2,
+                    "total_pass": 1,
+                    "total_fail": 1,
+                    "percent_pass": 50
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbinnenzijde"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:pattern": [
+                                        {
+                                            "@value": "RAL.*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbinnenzijde",
+                    "value": "{'pattern': 'RAL.*'}",
+                    "description": "Kleurbinnenzijde data shall be {'pattern': 'RAL.*'} and in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#10484=IfcWindow('2$UeUKpaD9F8_d0_zxndYd',#48,'31.i_BI Houten raam:31.i_BI Houten raam:377717',$,'31.i_BI Houten raam:31.i_BI Houten raam',#10483,#10477,'377717',1836.00000000001,1000.)",
+                            "element_type": "#10468=IfcWindowStyle('1IzFEdtVLEUgB3NEimTO_9',#48,'31.i_BI Houten raam:31.i_BI Houten raam',$,$,(#10467,#10538,#10541,#10543,#10548,#10554),(#10465),'607837',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI Houten raam:31.i_BI Houten raam",
+                            "name": "31.i_BI Houten raam:31.i_BI Houten raam:377717",
+                            "description": null,
+                            "id": 10484,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYd",
+                            "tag": "377717"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property set does not contain the required property",
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "total_applicable": 2,
+                    "total_pass": 1,
+                    "total_fail": 1,
+                    "percent_pass": 50
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbuitenzijde"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbuitenzijde",
+                    "value": "",
+                    "description": "Kleurbuitenzijde data shall be provided in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#10484=IfcWindow('2$UeUKpaD9F8_d0_zxndYd',#48,'31.i_BI Houten raam:31.i_BI Houten raam:377717',$,'31.i_BI Houten raam:31.i_BI Houten raam',#10483,#10477,'377717',1836.00000000001,1000.)",
+                            "element_type": "#10468=IfcWindowStyle('1IzFEdtVLEUgB3NEimTO_9',#48,'31.i_BI Houten raam:31.i_BI Houten raam',$,$,(#10467,#10538,#10541,#10543,#10548,#10554),(#10465),'607837',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI Houten raam:31.i_BI Houten raam",
+                            "name": "31.i_BI Houten raam:31.i_BI Houten raam:377717",
+                            "description": null,
+                            "id": 10484,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYd",
+                            "tag": "377717"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property set does not contain the required property",
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "total_applicable": 2,
+                    "total_pass": 1,
+                    "total_fail": 1,
+                    "percent_pass": 50
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Onderdeel"
+                        },
+                        "value": {
+                            "simpleValue": "Raam"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Onderdeel",
+                    "value": "Raam",
+                    "description": "Onderdeel data shall be Raam and in the dataset CPset_31",
+                    "status": false,
+                    "passed_entities": [
+                        {
+                            "element": "#10484=IfcWindow('2$UeUKpaD9F8_d0_zxndYd',#48,'31.i_BI Houten raam:31.i_BI Houten raam:377717',$,'31.i_BI Houten raam:31.i_BI Houten raam',#10483,#10477,'377717',1836.00000000001,1000.)",
+                            "element_type": "#10468=IfcWindowStyle('1IzFEdtVLEUgB3NEimTO_9',#48,'31.i_BI Houten raam:31.i_BI Houten raam',$,$,(#10467,#10538,#10541,#10543,#10548,#10554),(#10465),'607837',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI Houten raam:31.i_BI Houten raam",
+                            "name": "31.i_BI Houten raam:31.i_BI Houten raam:377717",
+                            "description": null,
+                            "id": 10484,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYd",
+                            "tag": "377717"
+                        }
+                    ],
+                    "failed_entities": [
+                        {
+                            "reason": "The property value \"Ruit\" does not match the requirements",
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "total_applicable": 2,
+                    "total_pass": 1,
+                    "total_fail": 1,
+                    "percent_pass": 50
+                }
+            ]
+        },
+        {
+            "name": "Raam met glas",
+            "description": "",
+            "instructions": "",
+            "status": true,
+            "is_ifc_version": true,
+            "total_applicable": 1,
+            "total_applicable_pass": 1,
+            "total_applicable_fail": 0,
+            "percent_applicable_pass": 100,
+            "total_checks": 2,
+            "total_checks_pass": 2,
+            "total_checks_fail": 0,
+            "percent_checks_pass": 100,
+            "required": false,
+            "applicability": [
+                "All IFCWINDOW data",
+                "All data with a {'pattern': '.*glas.*'} material"
+            ],
+            "requirements": [
+                {
+                    "facet_type": "PartOf",
+                    "metadata": {
+                        "@relation": "IFCRELAGGREGATES",
+                        "@cardinality": "required",
+                        "entity": {
+                            "name": {
+                                "simpleValue": "IFCELEMENTASSEMBLY"
+                            }
+                        }
+                    },
+                    "label": "IFCRELAGGREGATES",
+                    "value": "IFCELEMENTASSEMBLY",
+                    "description": "An element must have an IFCRELAGGREGATES relationship with an IFCELEMENTASSEMBLY",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Onderdeel"
+                        },
+                        "value": {
+                            "simpleValue": "Ruit"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Onderdeel",
+                    "value": "Ruit",
+                    "description": "Onderdeel data shall be Ruit and in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10790=IfcWindow('2$UeUKpaD9F8_d0_zxndYb',#48,'31.i_BI glas:31.i_BI glas:377719',$,'31.i_BI glas:31.i_BI glas',#10789,#10783,'377719',1850.,999.999999999996)",
+                            "element_type": "#10772=IfcWindowStyle('1qDrRnFPb0du6Kx0i9TbRx',#48,'31.i_BI glas:31.i_BI glas',$,$,(#10771,#10827,#10830,#10832,#10836,#10839),(#10769),'476409',.NOTDEFINED.,.NOTDEFINED.,.F.,.F.)",
+                            "class": "IfcWindow",
+                            "predefined_type": "31.i_BI glas:31.i_BI glas",
+                            "name": "31.i_BI glas:31.i_BI glas:377719",
+                            "description": null,
+                            "id": 10790,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYb",
+                            "tag": "377719"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                }
+            ]
+        },
+        {
+            "name": "Paneel",
+            "description": "",
+            "instructions": "",
+            "status": true,
+            "is_ifc_version": true,
+            "total_applicable": 1,
+            "total_applicable_pass": 1,
+            "total_applicable_fail": 0,
+            "percent_applicable_pass": 100,
+            "total_checks": 8,
+            "total_checks_pass": 8,
+            "total_checks_fail": 0,
+            "percent_checks_pass": 100,
+            "required": false,
+            "applicability": [
+                "All IFCPLATE data"
+            ],
+            "requirements": [
+                {
+                    "facet_type": "PartOf",
+                    "metadata": {
+                        "@relation": "IFCRELAGGREGATES",
+                        "@cardinality": "required",
+                        "entity": {
+                            "name": {
+                                "simpleValue": "IFCELEMENTASSEMBLY"
+                            }
+                        }
+                    },
+                    "label": "IFCRELAGGREGATES",
+                    "value": "IFCELEMENTASSEMBLY",
+                    "description": "An element must have an IFCRELAGGREGATES relationship with an IFCELEMENTASSEMBLY",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbinnenzijde"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:string",
+                                    "xs:pattern": [
+                                        {
+                                            "@value": "RAL.*"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbinnenzijde",
+                    "value": "{'pattern': 'RAL.*'}",
+                    "description": "Kleurbinnenzijde data shall be {'pattern': 'RAL.*'} and in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Kleurbuitenzijde"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Kleurbuitenzijde",
+                    "value": "",
+                    "description": "Kleurbuitenzijde data shall be provided in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "CPset_31"
+                        },
+                        "baseName": {
+                            "simpleValue": "Onderdeel"
+                        },
+                        "@dataType": "IFCTEXT",
+                        "@cardinality": "required"
+                    },
+                    "label": "CPset_31.Onderdeel",
+                    "value": "",
+                    "description": "Onderdeel data shall be provided in the dataset CPset_31",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "Pset_PlateCommon"
+                        },
+                        "baseName": {
+                            "simpleValue": "AcousticRating"
+                        },
+                        "@uri": "http://identifier.buildingsmart.org/uri/buildingsmart/ifc-2x3/prop/acousticrating",
+                        "@cardinality": "required"
+                    },
+                    "label": "Pset_PlateCommon.AcousticRating",
+                    "value": "",
+                    "description": "AcousticRating data shall be provided in the dataset Pset_PlateCommon",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "Pset_PlateCommon"
+                        },
+                        "baseName": {
+                            "simpleValue": "Reference"
+                        },
+                        "@cardinality": "required"
+                    },
+                    "label": "Pset_PlateCommon.Reference",
+                    "value": "",
+                    "description": "Reference data shall be provided in the dataset Pset_PlateCommon",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "Pset_PlateCommon"
+                        },
+                        "baseName": {
+                            "simpleValue": "ThermalTransmittance"
+                        },
+                        "value": {
+                            "xs:restriction": [
+                                {
+                                    "@base": "xs:double",
+                                    "xs:minExclusive": [
+                                        {
+                                            "@value": "0.5"
+                                        }
+                                    ],
+                                    "xs:maxExclusive": [
+                                        {
+                                            "@value": "2.1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@dataType": "IFCTHERMALTRANSMITTANCEMEASURE",
+                        "@cardinality": "required"
+                    },
+                    "label": "Pset_PlateCommon.ThermalTransmittance",
+                    "value": "{'minExclusive': '0.5', 'maxExclusive': '2.1'}",
+                    "description": "ThermalTransmittance data shall be {'minExclusive': '0.5', 'maxExclusive': '2.1'} and in the dataset Pset_PlateCommon",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                },
+                {
+                    "facet_type": "Property",
+                    "metadata": {
+                        "propertySet": {
+                            "simpleValue": "Pset_PlateCommon"
+                        },
+                        "baseName": {
+                            "simpleValue": "FireRating"
+                        },
+                        "value": {
+                            "simpleValue": "30"
+                        },
+                        "@dataType": "IFCLABEL",
+                        "@cardinality": "required"
+                    },
+                    "label": "Pset_PlateCommon.FireRating",
+                    "value": "30",
+                    "description": "FireRating data shall be 30 and in the dataset Pset_PlateCommon",
+                    "status": true,
+                    "passed_entities": [
+                        {
+                            "element": "#10704=IfcPlate('2$UeUKpaD9F8_d0_zxndYa',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel:377718',$,'31.i_BI Houten paneel:31.i_BI Houten paneel',#10703,#10697,'377718')",
+                            "element_type": "#10679=IfcPlateType('2$UeUKpaD9F8_d0_zxndif',#48,'31.i_BI Houten paneel:31.i_BI Houten paneel',$,$,(#10738,#10741,#10743,#10748),(#10677),'377718',$,.NOTDEFINED.)",
+                            "class": "IfcPlate",
+                            "predefined_type": "31.i_BI Houten paneel:31.i_BI Houten paneel",
+                            "name": "31.i_BI Houten paneel:31.i_BI Houten paneel:377718",
+                            "description": null,
+                            "id": 10704,
+                            "global_id": "2$UeUKpaD9F8_d0_zxndYa",
+                            "tag": "377718"
+                        }
+                    ],
+                    "failed_entities": [],
+                    "total_applicable": 1,
+                    "total_pass": 1,
+                    "total_fail": 0,
+                    "percent_pass": 100
+                }
+            ]
+        }
+    ],
+    "status": false,
+    "total_specifications": 6,
+    "total_specifications_pass": 3,
+    "total_specifications_fail": 3,
+    "percent_specifications_pass": 50,
+    "total_requirements": 28,
+    "total_requirements_pass": 19,
+    "total_requirements_fail": 9,
+    "percent_requirements_pass": 67,
+    "total_checks": 68,
+    "total_checks_pass": 46,
+    "total_checks_fail": 22,
+    "percent_checks_pass": 67
+}
