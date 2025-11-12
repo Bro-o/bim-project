@@ -19,7 +19,7 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-change-this-in-productio
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=True)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1', '192.168.0.14', '203.255.40.244', 'cpted.co.kr'])
 
 # Application definition
 INSTALLED_APPS = [
@@ -109,8 +109,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS 설정
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost",
+    "http://127.0.0.1",
+    "http://192.168.0.14",
+    "http://203.255.40.244",
+    "http://cpted.co.kr",
+    "http://www.cpted.co.kr",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
