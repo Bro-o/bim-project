@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-
+import type * as OBCTypes from '@thatopen/components'
 
 export default function IFCTest() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,9 +54,9 @@ export default function IFCTest() {
       const worlds = components.get(OBC.Worlds);
 
       const world = worlds.create<
-        OBC.SimpleScene,
-        OBC.SimpleCamera,
-        OBC.SimpleRenderer
+        OBCTypes.SimpleScene,
+        OBCTypes.SimpleCamera,
+        OBCTypes.SimpleRenderer
       >();
 
       worldRef.current = world;

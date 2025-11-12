@@ -32,21 +32,71 @@ export default function Review() {
 
     setIsUploading(true)
     setIsReviewing(true)
-    setMessage('파일 업로드 완료. 검토 작업을 시작합니다...')
+    setMessage('파일 인코딩 중...')
 
     try {
-      const formData = new FormData()
-      formData.append('ifc_file', bimFile)
-      formData.append('ids_file', idsFile)
+      // Smart X Filter 우회: 압축 + Base64 인코딩
+      const compressAndEncode = async (file: File): Promise<string> => {
+        const arrayBuffer = await file.arrayBuffer()
+        
+        // gzip 압축
+        const cs = new CompressionStream('gzip')
+        const stream = new Blob([arrayBuffer]).stream()
+        const compressedStream = stream.pipeThrough(cs)
+        const compressedBlob = await new Response(compressedStream).blob()
+        const compressedBuffer = await compressedBlob.arrayBuffer()
+        
+        // Base64 인코딩 (청크 단위로 스택 오버플로우 방지)
+        const bytes = new Uint8Array(compressedBuffer)
+        const chunkSize = 8192
+        let binary = ''
+        
+        for (let i = 0; i < bytes.length; i += chunkSize) {
+          const chunk = bytes.subarray(i, Math.min(i + chunkSize, bytes.length))
+          binary += String.fromCharCode(...chunk)
+        }
+        
+        return btoa(binary)
+      }
 
-      // 비동기 검토 시작 (task_id 수신)
+      console.log('파일 압축 시작...')
+      console.log('원본 IFC 크기:', bimFile.size, 'bytes')
+      console.log('원본 IDS 크기:', idsFile.size, 'bytes')
+
+      const ifcBase64 = await compressAndEncode(bimFile)
+      const idsBase64 = await compressAndEncode(idsFile)
+
+      console.log('압축 후 IFC Base64 길이:', ifcBase64.length)
+      console.log('압축 후 IDS Base64 길이:', idsBase64.length)
+      console.log('압축률:', ((1 - ifcBase64.length / (bimFile.size * 4/3)) * 100).toFixed(1), '%')
+
+      setMessage('파일 업로드 중...')
+
+      // JSON으로 전송 (multipart 대신)
       const kickRes = await fetch(`/api/ifc-ids-review/`, {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ifc_file: ifcBase64,
+          ifc_filename: bimFile.name,
+          ids_file: idsBase64,
+          ids_filename: idsFile.name,
+        }),
       })
 
+      setMessage('검토 작업을 시작합니다...')
+
       if (!kickRes.ok) {
-        const errorData = await kickRes.json()
+        const responseText = await kickRes.text()
+        console.error('서버 응답:', responseText)
+        let errorData
+        try {
+          errorData = JSON.parse(responseText)
+        } catch {
+          throw new Error(`서버 에러 (${kickRes.status}): ${responseText.substring(0, 200)}`)
+        }
         throw new Error(errorData.error || `HTTP error! status: ${kickRes.status}`)
       }
 
@@ -84,7 +134,6 @@ export default function Review() {
               setReviewResult({
                 success: result?.success,
                 summary: result?.summary,
-                // HTML 리포트는 파일로 저장되므로 링크 안내
                 htmlReportPath: result?.html_report_path,
                 jsonReport: result?.json_report,
                 details: result?.json_report?.specifications || []

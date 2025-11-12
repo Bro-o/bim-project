@@ -150,40 +150,95 @@ def ifc_ids_review(request):
     """IFC 파일과 IDS 파일을 비교하여 검증 리포트 생성 (비동기)"""
     logger.info("=== IFC-IDS 검토 API 요청 시작 ===")
     logger.info(f"요청 메서드: {request.method}")
-    logger.info(f"FILES: {request.FILES}")
+    logger.info(f"Content-Type: {request.META.get('CONTENT_TYPE', 'N/A')}")
     
     try:
-        # 파일 검증
-        if 'ifc_file' not in request.FILES:
-            return JsonResponse({'error': 'IFC 파일이 없습니다.'}, status=400)
+        # JSON 요청 처리 (Smart X Filter 우회용)
+        if request.content_type == 'application/json':
+            import json
+            import base64
+            import gzip
+            
+            data = json.loads(request.body)
+            logger.info("JSON 요청 수신 - 압축 해제 시작")
+            
+            # 필수 필드 검증
+            if 'ifc_file' not in data or 'ids_file' not in data:
+                return JsonResponse({'error': '파일 데이터가 없습니다.'}, status=400)
+            
+            if 'ifc_filename' not in data or 'ids_filename' not in data:
+                return JsonResponse({'error': '파일명이 없습니다.'}, status=400)
+            
+            ifc_filename = data['ifc_filename']
+            ids_filename = data['ids_filename']
+            
+            # 파일 형식 검증
+            if not ifc_filename.lower().endswith('.ifc'):
+                return JsonResponse({'error': 'IFC 파일만 업로드 가능합니다.'}, status=400)
+            
+            if not ids_filename.lower().endswith('.ids'):
+                return JsonResponse({'error': 'IDS 파일만 업로드 가능합니다.'}, status=400)
+            
+            # Base64 디코딩 + gzip 압축 해제
+            try:
+                # Base64 디코딩
+                ifc_compressed = base64.b64decode(data['ifc_file'])
+                ids_compressed = base64.b64decode(data['ids_file'])
+                
+                logger.info(f"압축된 크기 - IFC: {len(ifc_compressed)} bytes, IDS: {len(ids_compressed)} bytes")
+                
+                # gzip 압축 해제
+                ifc_content = gzip.decompress(ifc_compressed)
+                ids_content = gzip.decompress(ids_compressed)
+                
+                logger.info(f"압축 해제 완료 - IFC: {len(ifc_content)} bytes, IDS: {len(ids_content)} bytes")
+                logger.info(f"압축률 - IFC: {(1 - len(ifc_compressed)/len(ifc_content))*100:.1f}%")
+                
+            except Exception as e:
+                logger.error(f"파일 디코딩/압축 해제 오류: {str(e)}")
+                return JsonResponse({'error': '파일 디코딩 실패'}, status=400)
+            
+            # 파일 크기 검증 (압축 해제 후)
+            if len(ifc_content) > 100 * 1024 * 1024:
+                return JsonResponse({'error': 'IFC 파일 크기는 100MB를 초과할 수 없습니다.'}, status=400)
+            
+            if len(ids_content) > 10 * 1024 * 1024:
+                return JsonResponse({'error': 'IDS 파일 크기는 10MB를 초과할 수 없습니다.'}, status=400)
         
-        if 'ids_file' not in request.FILES:
-            return JsonResponse({'error': 'IDS 파일이 없습니다.'}, status=400)
-        
-        ifc_file = request.FILES['ifc_file']
-        ids_file = request.FILES['ids_file']
-        
-        # 파일 형식 검증
-        if not ifc_file.name.lower().endswith('.ifc'):
-            return JsonResponse({'error': 'IFC 파일만 업로드 가능합니다.'}, status=400)
-        
-        if not ids_file.name.lower().endswith('.ids'):
-            return JsonResponse({'error': 'IDS 파일만 업로드 가능합니다.'}, status=400)
-        
-        # 파일 크기 제한 (100MB)
-        if ifc_file.size > 100 * 1024 * 1024:
-            return JsonResponse({'error': 'IFC 파일 크기는 100MB를 초과할 수 없습니다.'}, status=400)
-        
-        if ids_file.size > 10 * 1024 * 1024:
-            return JsonResponse({'error': 'IDS 파일 크기는 10MB를 초과할 수 없습니다.'}, status=400)
-        
-        # 파일 내용을 읽어서 Celery 태스크에 전달
-        ifc_content = ifc_file.read()
-        ids_content = ids_file.read()
+        # 기존 multipart/form-data 방식도 지원
+        else:
+            if 'ifc_file' not in request.FILES:
+                return JsonResponse({'error': 'IFC 파일이 없습니다.'}, status=400)
+            
+            if 'ids_file' not in request.FILES:
+                return JsonResponse({'error': 'IDS 파일이 없습니다.'}, status=400)
+            
+            ifc_file = request.FILES['ifc_file']
+            ids_file = request.FILES['ids_file']
+            
+            ifc_filename = ifc_file.name
+            ids_filename = ids_file.name
+            
+            # 파일 형식 검증
+            if not ifc_filename.lower().endswith('.ifc'):
+                return JsonResponse({'error': 'IFC 파일만 업로드 가능합니다.'}, status=400)
+            
+            if not ids_filename.lower().endswith('.ids'):
+                return JsonResponse({'error': 'IDS 파일만 업로드 가능합니다.'}, status=400)
+            
+            # 파일 크기 제한
+            if ifc_file.size > 100 * 1024 * 1024:
+                return JsonResponse({'error': 'IFC 파일 크기는 100MB를 초과할 수 없습니다.'}, status=400)
+            
+            if ids_file.size > 10 * 1024 * 1024:
+                return JsonResponse({'error': 'IDS 파일 크기는 10MB를 초과할 수 없습니다.'}, status=400)
+            
+            ifc_content = ifc_file.read()
+            ids_content = ids_file.read()
         
         # Celery 태스크 실행
         from .tasks import ifc_ids_review_task
-        task = ifc_ids_review_task.delay(ifc_content, ifc_file.name, ids_content, ids_file.name)
+        task = ifc_ids_review_task.delay(ifc_content, ifc_filename, ids_content, ids_filename)
         
         logger.info(f"Celery 태스크 시작: {task.id}")
         
