@@ -10,8 +10,11 @@ export default function IFCTest() {
   const [loadedFileName, setLoadedFileName] = useState<string | null>(null);
   
   // IFC 로더와 fragments를 ref로 관리하여 외부에서 접근 가능하게 함
+  const componentsRef = useRef<any>(null);
   const ifcLoaderRef = useRef<any>(null);
+  const boxerRef = useRef<any>(null);
   const fragmentsRef = useRef<any>(null);
+  const worldRef = useRef<any>(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -46,6 +49,7 @@ export default function IFCTest() {
       */
 
       const components = new OBC.Components();
+      componentsRef.current = components; // ref에 저장
 
       const worlds = components.get(OBC.Worlds);
 
@@ -54,6 +58,8 @@ export default function IFCTest() {
         OBC.SimpleCamera,
         OBC.SimpleRenderer
       >();
+
+      worldRef.current = world;
 
 
       world.scene = new OBC.SimpleScene(components);
@@ -66,7 +72,7 @@ export default function IFCTest() {
 
       components.init();
 
-      components.get(OBC.Grids).create(world);
+      // components.get(OBC.Grids).create(world);
 
       
 
@@ -89,6 +95,9 @@ export default function IFCTest() {
         },
       });
 
+      const boxer = components.get(OBC.BoundingBoxer);
+      boxerRef.current = boxer;
+
       // 워커 파일 로드(localhost에서는 접근이 안돼서 다운 받아서 사용)
       const githubUrl =
         "https://thatopen.github.io/engine_fragment/resources/worker.mjs";
@@ -106,6 +115,13 @@ export default function IFCTest() {
       world.camera.controls.addEventListener("rest", () =>
         fragments.core.update(true),
       );
+
+      world.onCameraChanged.add((camera: any) => {
+        for (const [, model] of fragments.list) {
+          model.useCamera(camera.three);
+        }
+        fragments.core.update(true);
+      });
 
       fragments.list.onItemSet.add(({ value: model }: any) => {
         model.useCamera(world.camera.three);
@@ -197,6 +213,9 @@ export default function IFCTest() {
 
       setLoadedFileName(file.name);
       console.log('IFC 파일 로딩 완료:', file.name);
+      
+      // 모델 로드 완료 후 카메라를 모델에 맞춰 조정
+      await fitCameraToModel();
     } catch (error) {
       console.error('IFC 파일 로딩 실패:', error);
       alert('IFC 파일을 로드하는 중 오류가 발생했습니다.');
@@ -205,6 +224,40 @@ export default function IFCTest() {
       // 파일 input 초기화 (같은 파일을 다시 선택할 수 있도록)
       event.target.value = '';
     }
+  };
+
+  const fitCameraToModel = async () => {
+    if (!boxerRef.current || !worldRef.current) {
+      console.warn('Boxer 또는 World가 아직 초기화되지 않았습니다.');
+      return;
+    }
+
+    try {
+      // THREE 라이브러리 동적 임포트 (이미 로드된 경우 캐시됨)
+      const THREE = await import("three");
+      
+      const box = getLoadedModelsBoundings();
+      const sphere = new THREE.Sphere();
+      box.getBoundingSphere(sphere);
+      
+      await worldRef.current.camera.controls.fitToSphere(sphere, true);
+      
+      console.log('카메라가 모델에 맞춰 조정되었습니다.');
+    } catch (error) {
+      console.error('카메라 조정 중 오류 발생:', error);
+    }
+  };
+
+  const getLoadedModelsBoundings = () => {
+    // As a good practice, always clean up the boxer list first
+    // so no previous boxes added are taken into account
+    boxerRef.current.list.clear();
+    boxerRef.current.addFromModels();
+    // This computes the merged box of the list.
+    const box = boxerRef.current.get();
+    // As a good practice, always clean up the boxer list after the calculation
+    boxerRef.current.list.clear();
+    return box;
   };
 
   if (!isMounted) {
